@@ -1,6 +1,7 @@
 package br.com.wszd;
 
 import br.com.wszd.persistence.migration.MigrationStrategy;
+import br.com.wszd.ui.MainMenu;
 
 import java.sql.SQLException;
 
@@ -11,5 +12,7 @@ public class Main {
         try(var connection = getConnection()){
             new MigrationStrategy(connection).executeMigration();
         }
+
+        new MainMenu().execute();
     }
 }
