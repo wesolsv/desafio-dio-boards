@@ -16,7 +16,7 @@ import static br.com.wszd.persistence.entity.BoardColumnKindEnum.INITIAL;
 
 public class MainMenu {
 
-    private final Scanner scanner = new Scanner(System.in);
+    private final Scanner scanner = new Scanner(System.in).useDelimiter("\n");
 
     public void execute() throws SQLException {
         System.out.println("Welcome to the system my friend, choose your option:");

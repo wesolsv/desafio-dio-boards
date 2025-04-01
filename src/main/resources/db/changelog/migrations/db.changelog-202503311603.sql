@@ -5,7 +5,7 @@
 CREATE TABLE BLOCKS(
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     blocked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    block_reason VARCHAR(255) NOT NULL,
+    blocked_reason VARCHAR(255) NOT NULL,
     unblocked_at TIMESTAMP NULL,
     unblocked_reason VARCHAR(255) NOT NULL,
     card_id BIGINT NOT NULL,
