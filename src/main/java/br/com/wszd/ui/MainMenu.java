@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import static br.com.wszd.persistence.config.ConnectionConfig.getConnection;
-import static br.com.wszd.persistence.entity.BoardColumnKindEnum.INITIAL;
+import static br.com.wszd.persistence.entity.BoardColumnKindEnum.*;
 
 public class MainMenu {
 
@@ -58,18 +58,18 @@ public class MainMenu {
         for(int i = 0 ; i<additionalColumns; i++){
             System.out.println("Informe o nome da coluna de tarefa pendente do board");
             var pendingColumnName = scanner.next();
-            var pendingColumn = createColumn(pendingColumnName, INITIAL, i + 1);
+            var pendingColumn = createColumn(pendingColumnName, PENDING, i + 1);
             columns.add(pendingColumn);
         }
 
         System.out.println("Informe o nome da coluna do final do board");
         var finalColumnName = scanner.next();
-        var finalColumn = createColumn(finalColumnName, INITIAL, additionalColumns + 1);
+        var finalColumn = createColumn(finalColumnName, FINAL, additionalColumns + 1);
         columns.add(finalColumn);
 
         System.out.println("Informe o nome da coluna de cancelamento do board");
         var cancelColumnName = scanner.next();
-        var cancelColumn = createColumn(cancelColumnName, INITIAL, additionalColumns + 2);
+        var cancelColumn = createColumn(cancelColumnName, CANCEL, additionalColumns + 2);
         columns.add(cancelColumn);
 
         entity.setBoardColumns(columns);
